@@ -172,7 +172,11 @@ export default class TileMapper {
     } else {
       all = [...this.clickedTiles];
     }
+    if (this.tileFormat){
+      return tileFormatOutput(all,...this.divisions)
+    }else{
     return all;
+    }
   }
 
   /**
@@ -263,4 +267,5 @@ export function tileFormatOutput(rawInput, xDiv, yDiv) {
     });
   });
   console.log(final);
+  return final
 }
